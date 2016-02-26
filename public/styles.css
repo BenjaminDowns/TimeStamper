@@ -69,3 +69,21 @@ pre {
     font-size: .7em;
 }
 
+@media all 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    p {
+        /*font-size: .7em;*/
+        overflow-wrap: break-word;
+    }    
+    blockquote {
+        margin-right: 2.5%;
+    }
+    .heading {
+        margin-left: 25%;
+    } 
+}
+
