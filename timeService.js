@@ -32,18 +32,18 @@ module.exports = function (req, res) {
 
             finalDate = {
                 unix: unixTime,
-                readable: days[dayIndex] + ", " + months[monthIndex] + " " + dayNum + ", " + year
+                natural: days[dayIndex] + ", " + months[monthIndex] + " " + dayNum + ", " + year
             };
             
             // final check
-            if (!finalDate.unix || !finalDate.readable) {
+            if (!finalDate.unix || !finalDate.natural) {
                 throw err;
             }
         // respond with null values if time request incompatible format    
         } catch (err) {
             finalDate = {
                 unix: null,
-                readable: null
+                natural: null
             };
         }     
         res.send(finalDate)
