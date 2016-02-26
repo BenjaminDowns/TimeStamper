@@ -1,8 +1,10 @@
 html body {
     background-color: #F5F5F5; 
     color: #757575;
-    padding: 0px 0px 2% 5%;
-    font: Lato, sans-serif;
+    padding: 0px 0px 0px 5%;
+    font-family: "Courier New", Courier, monospace;
+    height: 100%;
+    width: 100%;
 }
 
 small {
@@ -18,33 +20,45 @@ small {
 }
 
 .description {
-    color: #757575;
     padding: 0px 0px 0px 20px;
     margin: 10px 350px 0px 0px;
 }
 
-p {
-    font-size: 1.25em;
-    margin-right: 30%;
-}
+/*p {
+    
+}*/
 
 pre {
     font-size: 1.25em
 }
 
-.quote-block {
-    min-height: 150px;
-    max-height: 250px;
-    width: 2.5%;
-    float: left;
-    background-color: darkcyan;
-    margin: 0px 2.5% 0px 2.5%;
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid darkcyan;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  margin-right: 30%;
 }
+
+blockquote:before {
+  color: #ccc;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+  font-size: 1.2em;
+}
+
 
 code {
     background-color: lightsteelblue;
     color: darkcyan;
-    padding: 5px 7px 2px 7px;
+    padding: 5px 7px 5px 7px;
 }
 
 .instructions {
@@ -52,5 +66,6 @@ code {
 }
 
 pre {
-    font-size: 1em;
+    font-size: .7em;
 }
+

@@ -21,15 +21,39 @@
                 <p>
                     
                 
-            </small> 
+            </small>
         </div class='instructions-container'>
-            <div class='quote-block'></div>
+        <h3>Get a date:</h3>
+        <blockquote>
             <p class='instructions'>
-                1) Go to <code>http://timestamper.herokuapp.com/some-date-here</code><p>
-                2) Time Stamper will respond with a JSON object containing both the unix stamp and your natural language date.
+                1) Go to <code>http://timestamper.herokuapp.com/some-date-here</code>
+                <br/>
+                <br/> 2) Time Stamper responds with a JSON object containing both the unix stamp and your natural language date.
             </p>
-        </div>
-        </div>
+        </blockquote>
+        <h3>Examples:</h3>
+        <blockquote>
+            <p>
+                Request: <code>http://localhost:3000/Feb%2026%202015</code>
+                <br/>
+                <br/>Response: <code>{
+                                        unix: 1424905200,
+                                        readable: "Thursday, February 26, 2015"
+                                       }</code>
+            </p>
+        </blockquote>
+        <blockquote>
+            <p>
+                Request: <code>http://localhost:3000/November%2028,%201962</code>
+                <br/>
+                <br/>Response: <code>{
+                                            unix: -223866000,
+                                            readable: "Wednesday, November 28, 1962"
+                                            }</code>
+            </p>
+        </blockquote>
+    </div>
+    </div>
 
 </body>
 
