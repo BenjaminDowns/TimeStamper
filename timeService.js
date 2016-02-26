@@ -16,12 +16,12 @@ module.exports = function (req, res) {
         try {
             
             // check if param is unix time or string
-            if (/^\d*$/.test(time)) {
+            if (/^-?\d*$/.test(time)) {
                 dateTime = new Date(time * 1000)
                 unixTime = time;
             } else {
                 dateTime = new Date(time);
-                unixTime = dateTime.getTime() / 1000
+                unixTime = dateTime.getUnixTime()
             }
 
             // format the response
