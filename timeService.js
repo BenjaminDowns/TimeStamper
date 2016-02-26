@@ -9,11 +9,13 @@ module.exports = function (req, res) {
     var time = req.params.time
 
     if (!time) {
-        
-        res.send('no time designated')
+
+        res.render('index')
 
     } else {
         try {
+            
+            // check if param is unix time or string
             if (/^\d*$/.test(time)) {
                 dateTime = new Date(time * 1000)
                 unixTime = time;
@@ -22,6 +24,7 @@ module.exports = function (req, res) {
                 unixTime = dateTime.getTime() / 1000
             }
 
+            // format the response
             year = dateTime.getFullYear();
             monthIndex = dateTime.getMonth();
             dayNum = dateTime.getDate();
@@ -31,15 +34,18 @@ module.exports = function (req, res) {
                 unix: unixTime,
                 readable: days[dayIndex] + ", " + months[monthIndex] + " " + dayNum + ", " + year
             };
-
+            
+            // final check
             if (!finalDate.unix || !finalDate.readable) {
                 throw err;
             }
-
-            res.send(finalDate);
-
+        // respond with null values if time request incompatible format    
         } catch (err) {
-            res.send("It looks like your date was not properly formatted. Try MM-DD-YYYY or 'January 15 2014' for best results.");
-        }
+            finalDate = {
+                unix: null,
+                readable: null
+            };
+        }     
+        res.send(finalDate)
     }
 };

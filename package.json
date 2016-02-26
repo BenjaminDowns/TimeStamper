@@ -15,6 +15,6 @@
   "author": "Benjamin M. Downs",
   "license": "ISC",
   "dependencies": {
-      "express": "^4.13.1",
+      "express": "^4.13.1"
   }
 }
